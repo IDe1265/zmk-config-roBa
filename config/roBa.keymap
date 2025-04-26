@@ -110,7 +110,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "LANG_TD_BEHAVIOR";
             #binding-cells = <0>;
-            bindings = <&mt LCTRL INTERNATIONAL_1>, <&mt LCTRL INTERNATIONAL_2>;
+            bindings = <&mt LCTRL LANGUAGE_1>, <&mt LCTRL LANGUAGE_2>;
 
             tapping-term-ms = <180>;
         };
