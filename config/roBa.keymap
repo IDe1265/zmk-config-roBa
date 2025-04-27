@@ -71,10 +71,7 @@
             compatible = "zmk,behavior-macro-one-param";
             label = "SHIFT_MACRO";
             #binding-cells = <1>;
-            bindings =
-                <&kp LS>,
-                <&macro_param_1to1 (&kp MACRO_PLACEHOLDER)>,
-                <&kp LC(LS)>;
+            bindings = <&kp LS(LEFT_SHIFT) &macro_param_1to1 &kp MACRO_PLACEHOLDER &kp LS(LEFT_SHIFT)>;
         };
     };
 
