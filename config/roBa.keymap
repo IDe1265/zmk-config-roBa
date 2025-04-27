@@ -72,9 +72,9 @@
             label = "SHIFT_MACRO";
             #binding-cells = <1>;
             bindings =
-                <&kp LS>,                       // Shift押下
-                <&macro_param_1to1 &kp>,         // 引数のキーを押下
-                <&kp LC(LS)>;                   // Shift離す
+                <&kp LS>,           // Shift押す
+                <&macro_param_1to1>, // 引数をそのまま送信
+                <&kp LC(LS)>;       // Shift離す
         };
     };
 
