@@ -125,10 +125,10 @@
 
         mouse_symbol {
             bindings = <
-&kp LG(LS(S))  &kp LC(TAB)  &kp LC(LA(TAB))  &mkp MB5  &trans                      &kp LS(N7)            &kp LS(SEMICOLON)  &kp LS(SQT)  &kp EQUAL         &kp LEFT_BRACKET
-&mo 4          &mkp MB2     &mkp MB3         &mkp MB1  &trans  &trans      &trans  &kp LS(NUMBER_2)      &kp SEMICOLON      &kp SQT      &kp LS(NUMBER_1)  &mo 4
-&trans         &trans       &trans           &mkp MB4  &trans  &trans      &trans  &kp LS(LEFT_BRACKET)  &kp LS(NUMBER_3)   &kp LS(N5)   &kp LS(NUMBER_4)  &kp LS(NUMBER_6)
-&trans         &trans       &trans           &trans    &trans  &trans      &trans  &trans                                                                  &kp JP_UNDER
+&kp LG(LS(S))  &kp LC(TAB)  &kp LC(LA(TAB))  &mkp MB5  &trans                      &kp LS(N7)            &shift_macro LS(SEMICOLON)  &kp LS(SQT)  &kp EQUAL         &kp LEFT_BRACKET
+&mo 4          &mkp MB2     &mkp MB3         &mkp MB1  &trans  &trans      &trans  &kp LS(NUMBER_2)      &kp SEMICOLON               &kp SQT      &kp LS(NUMBER_1)  &mo 4
+&trans         &trans       &trans           &mkp MB4  &trans  &trans      &trans  &kp LS(LEFT_BRACKET)  &kp LS(NUMBER_3)            &kp LS(N5)   &kp LS(NUMBER_4)  &kp LS(NUMBER_6)
+&trans         &trans       &trans           &trans    &trans  &trans      &trans  &trans                                                                           &kp JP_UNDER
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_DOWN PAGE_UP>;
