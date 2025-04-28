@@ -107,21 +107,6 @@
 
             tapping-term-ms = <230>;
         };
-
-        macro_EXCLAMATION:  {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            label = "!_MACRO";
-            wait-ms = <0>;
-            bindings =
-                <&macro_wait_time TIMEOUT>,
-                <&macro_press>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp N1>,
-                <&macro_release>,
-                <&kp LSHFT>;
-        };
     };
 
     keymap {
