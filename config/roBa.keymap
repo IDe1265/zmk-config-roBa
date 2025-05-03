@@ -62,13 +62,13 @@
         compatible = "zmk,combos";
 
         lang1 {
-            bindings = <&kp LANGUAGE_1>;
+            bindings = <&kp LANGUAGE_2>;
             key-positions = <13 12>;
             layers = <0>;
         };
 
         lang2 {
-            bindings = <&kp LANGUAGE_2>;
+            bindings = <&kp LANGUAGE_1>;
             key-positions = <18 19>;
             layers = <0>;
         };
@@ -85,8 +85,21 @@
         bkt_macro: bkt_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RBKT &kp NUHS>;
+            bindings = <&kp RBKT &kp NUHS &kp LEFT_ARROW>;
             label = "BKT_MACRO";
+        };
+
+        par_macro: par_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp N8 &kp N9 &kp LEFT_ARROW>,
+                <&macro_release>;
+
+            label = "PAR_MACRO";
         };
     };
 
@@ -104,14 +117,14 @@
             compatible = "zmk,behavior-tap-dance";
             label = "LBKT_TD_BEHAVIOR";
             #binding-cells = <0>;
-            bindings = <&kp JP_LBKT>, <&kp LS(N8)>;
+            bindings = <&kp RBKT>, <&kp LS(N8)>;
         };
 
         rbkt_td_behavior: rbkt_td_behavior {
             compatible = "zmk,behavior-tap-dance";
             label = "RBKT_TD_BEHAVIOR";
             #binding-cells = <0>;
-            bindings = <&kp JP_RBKT>, <&kp LS(N9)>;
+            bindings = <&kp NUHS>, <&kp LS(N9)>;
         };
     };
 
@@ -132,7 +145,7 @@
         mouse_symbol {
             bindings = <
 &kp LG(LS(S))  &kp LC(TAB)  &kp LC(LA(TAB))  &mkp MB5  &bkt_macro                      &kp LS(N7)            &kp LS(SEMICOLON)  &kp LS(SQT)  &kp EQUAL         &kp LEFT_BRACKET
-&mo 4          &mkp MB2     &mkp MB3         &mkp MB1  &trans      &trans      &trans  &kp LS(NUMBER_2)      &kp SEMICOLON      &kp SQT      &kp LS(NUMBER_1)  &mo 4
+&mo 4          &mkp MB2     &mkp MB3         &mkp MB1  &par_macro  &trans      &trans  &kp LS(NUMBER_2)      &kp SEMICOLON      &kp SQT      &kp LS(NUMBER_1)  &mo 4
 &trans         &trans       &trans           &mkp MB4  &trans      &trans      &trans  &kp LS(LEFT_BRACKET)  &kp LS(NUMBER_3)   &kp LS(N5)   &kp LS(NUMBER_4)  &kp LS(NUMBER_6)
 &trans         &trans       &trans           &trans    &trans      &trans      &trans  &trans                                                                  &kp LS(INTERNATIONAL_3)
             >;
