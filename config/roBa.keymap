@@ -96,8 +96,11 @@
                 <&macro_press>,
                 <&kp LEFT_SHIFT>,
                 <&macro_tap>,
-                <&kp N8 &kp N9 &kp LEFT_ARROW>,
-                <&macro_release>;
+                <&kp N8 &kp N9>,
+                <&macro_release>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp LEFT_ARROW>;
 
             label = "PAR_MACRO";
         };
@@ -160,6 +163,8 @@
 &kp NUMBER_0   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD            &kp COMMA                    &none   &none   &kp HOME  &kp PAGE_UP   &kp PAGE_DOWN  &kp END
 &trans         &trans        &trans        &trans        &trans                &trans                       &trans  &trans                                         &none
             >;
+
+            sensor-bindings = <&inc_dec_kp LC(LS(TAB)) LC(TAB)>;
         };
 
         function_blt {
