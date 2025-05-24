@@ -121,7 +121,7 @@
             label = "BRC_MACRO";
         };
 
-        interface_shift: shift_macro {
+        interface_shift: interface_shift {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings =
@@ -130,7 +130,20 @@
                 <&macro_release>,
                 <&kp LSHFT>;
 
-            label = "SHIFT_MACRO";
+            label = "INTERFACE_SHIFT";
+        };
+
+        screen_switching: screen_switching {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT &kp LCTRL>,
+                <&macro_tap>,
+                <&kp TAB>,
+                <&macro_release>;
+
+            label = "SCREEN_SWITCHING";
         };
     };
 
@@ -157,6 +170,15 @@
             #binding-cells = <0>;
             bindings = <&kp NUHS>, <&kp LS(N9)>;
         };
+
+        layer_interface_shift: layer_interface_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_INTERFACE_SHIFT";
+            bindings = <&lt>, <&interface_shift>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+        };
     };
 
     keymap {
@@ -175,10 +197,10 @@
 
         mouse_symbol {
             bindings = <
-&kp LG(LS(S))  &kp LC(TAB)  &kp LC(LA(TAB))  &mkp MB5  &bkt_macro                      &kp LS(N7)                     &kp LS(SEMICOLON)  &kp LS(SQT)  &kp EQUAL         &kp LEFT_BRACKET
-&mo 4          &mkp MB2     &mkp MB3         &mkp MB1  &par_macro  &trans      &trans  &interface_shift LS(NUMBER_2)  &kp SEMICOLON      &kp SQT      &kp LS(NUMBER_1)  &lt 4 LS(EQUAL)
-&trans         &trans       &trans           &mkp MB4  &brc_macro  &trans      &trans  &kp LS(LEFT_BRACKET)           &kp LS(NUMBER_3)   &kp LS(N5)   &kp LS(NUMBER_4)  &kp LS(NUMBER_6)
-&trans         &trans       &trans           &trans    &trans      &trans      &trans  &trans                                                                           &kp LS(INTERNATIONAL_3)
+&kp LG(LS(S))  &kp LC(TAB)  &screen_switching  &mkp MB5  &bkt_macro                      &interface_shift LS(N7)            &interface_shift LS(SEMICOLON)  &kp LS(SQT)              &kp EQUAL                      &kp LEFT_BRACKET
+&mo 4          &mkp MB2     &mkp MB3           &mkp MB1  &par_macro  &trans      &trans  &interface_shift LS(NUMBER_2)      &kp SEMICOLON                   &kp SQT                  &interface_shift LS(NUMBER_1)  &layer_interface_shift 4 LS(EQUAL)
+&trans         &trans       &trans             &mkp MB4  &brc_macro  &trans      &trans  &interface_shift LS(LEFT_BRACKET)  &interface_shift LS(NUMBER_3)   &interface_shift LS(N5)  &interface_shift LS(NUMBER_4)  &interface_shift LS(NUMBER_6)
+&trans         &trans       &trans             &trans    &trans      &trans      &trans  &trans                                                                                                                     &kp LS(INTERNATIONAL_3)
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_DOWN PAGE_UP>;
@@ -186,10 +208,10 @@
 
         number_arrow {
             bindings = <
-&kp MINUS     &kp N7        &kp N8        &kp N9        &kp LS(SEMICOLON)                                          &none   &none     &none         &none          &none
-&kp SLASH     &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp LS(SINGLE_QUOTE)  &kp LC(LA(KP_NUMBER_0))      &none   &none   &kp LEFT  &kp UP_ARROW  &kp DOWN       &kp RIGHT
-&kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD            &kp COMMA                    &none   &none   &kp HOME  &kp PAGE_UP   &kp PAGE_DOWN  &kp END
-&trans        &trans        &trans        &trans        &trans                &trans                       &trans  &trans                                         &none
+&kp MINUS     &kp N7        &kp N8        &kp N9        &interface_shift LS(SEMICOLON)                                          &none   &none     &none         &none          &none
+&kp SLASH     &kp NUMBER_4  &kp N5        &kp NUMBER_6  &interface_shift LS(SINGLE_QUOTE)  &kp LC(LA(KP_NUMBER_0))      &none   &none   &kp LEFT  &kp UP_ARROW  &kp DOWN       &kp RIGHT
+&kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD                         &kp COMMA                    &none   &none   &kp HOME  &kp PAGE_UP   &kp PAGE_DOWN  &kp END
+&trans        &trans        &trans        &trans        &trans                             &trans                       &trans  &trans                                         &none
             >;
 
             sensor-bindings = <&inc_dec_kp LC(TAB) LC(LS(TAB))>;
