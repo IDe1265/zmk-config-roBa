@@ -52,8 +52,8 @@
 
 &mt {
     flavor = "balanced";
-    quick-tap-ms = <170>;
-    tapping-term-ms = <180>;
+    quick-tap-ms = <165>;
+    tapping-term-ms = <170>;
 };
 
 &sl { release-after-ms = <250>; }; // ダブルクリックに必要な時間を設定
@@ -141,7 +141,8 @@
                 <&kp LEFT_ALT &kp LCTRL>,
                 <&macro_tap>,
                 <&kp TAB>,
-                <&macro_release>;
+                <&macro_release>,
+                <&kp LEFT_ALT &kp LCTRL>;
 
             label = "SCREEN_SWITCHING";
         };
@@ -174,10 +175,11 @@
         layer_interface_shift: layer_interface_shift {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_INTERFACE_SHIFT";
-            bindings = <&lt>, <&interface_shift>;
+            bindings = <&mo>, <&interface_shift>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <175>;
+            tapping-term-ms = <170>;
+            flavor = "balanced";
         };
     };
 
