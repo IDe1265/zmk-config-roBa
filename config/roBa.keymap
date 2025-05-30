@@ -130,7 +130,7 @@
                 <&macro_press>,
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
                 <&macro_release>,
-                <&kp LSHFT>;
+                <&kp LEFT_SHIFT>;
 
             label = "INTERFACE_SHIFT";
         };
