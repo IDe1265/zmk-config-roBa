@@ -79,49 +79,49 @@
         combo_square_bracket_left {
             bindings = <&kp RIGHT_BRACKET>;
             key-positions = <2 3>;
-            layers = <0 1>;
+            layers = <0 2>;
         };
 
         combo_square_bracket_right {
             bindings = <&kp NUHS>;
             key-positions = <7 6>;
-            layers = <0 1>;
+            layers = <0 2>;
         };
 
         combo_parenthess_left {
             bindings = <&interface_shift N8>;
             key-positions = <23 22>;
-            layers = <0 1>;
+            layers = <0 2>;
         };
 
         combo_parenthess_right {
             bindings = <&interface_shift N9>;
             key-positions = <26 27>;
-            layers = <0 1>;
+            layers = <0 2>;
         };
 
         combo_curly_bracket_left {
             bindings = <&interface_shift RIGHT_BRACKET>;
             key-positions = <3 2>;
-            layers = <2>;
+            layers = <3>;
         };
 
         combo_curly_bracket_right {
             bindings = <&interface_shift NUHS>;
             key-positions = <7 6>;
-            layers = <2>;
+            layers = <3>;
         };
 
         combo_angle_braket_left {
             bindings = <&interface_shift COMMA>;
             key-positions = <23 22>;
-            layers = <2>;
+            layers = <3>;
         };
 
         combo_angle_braket_right {
             bindings = <&interface_shift PERIOD>;
             key-positions = <27 26>;
-            layers = <2>;
+            layers = <3>;
         };
     };
 
@@ -286,10 +286,21 @@
 
         df {
             bindings = <
-&kp Q       &kp W         &kp E         &kp R        &kp T                                                                &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A       &kp S         &kp D         &kp F        &kp G               &kp C_MUTE             &kp LG(LA(K))             &kp H        &kp J  &kp K      &kp L    &lt 4 MINUS
-&kp Z       &kp X         &kp C         &kp V        &kp B               &lbkt_td_behavior      &rbkt_td_behavior         &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp ESCAPE  &kp LEFT_WIN  &kp LEFT_ALT  &lt 1 SPACE  &mt LEFT_SHIFT TAB  &mt LCTRL GRAVE        &mt LEFT_SHIFT BACKSPACE  &lt 2 ENTER                             &kp INTERNATIONAL_1
+&kp Q       &kp W         &kp E         &kp R        &kp T                                                              &kp Y        &kp U  &kp I      &kp O    &kp P
+&kp A       &kp S         &kp D         &kp F        &kp G               &kp C_MUTE           &kp LG(LA(K))             &kp H        &kp J  &kp K      &kp L    &interface_toggle_scroll 0 MINUS
+&kp Z       &kp X         &kp C         &kp V        &kp B               &none                &none                     &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp ESCAPE  &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 SPACE  &mt LEFT_SHIFT TAB  &mt LCTRL GRAVE      &mt LEFT_SHIFT BACKSPACE  &lt 3 ENTER                             &kp INTERNATIONAL_1
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
+        };
+
+        layer_7 {
+            bindings = <
+&kp Q       &kp W         &kp E         &kp R        &kp T                                                              &kp Y        &kp U  &kp I      &kp O    &kp P
+&kp A       &kp S         &kp D         &kp F        &kp G               &kp C_MUTE           &kp LG(LA(K))             &kp H        &kp J  &kp K      &kp L    &interface_toggle_scroll 0 MINUS
+&kp Z       &kp X         &kp C         &kp V        &kp B               &none                &none                     &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp ESCAPE  &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 SPACE  &mt LEFT_SHIFT TAB  &mt LCTRL GRAVE      &mt LEFT_SHIFT BACKSPACE  &lt 3 ENTER                             &kp INTERNATIONAL_1
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
@@ -297,10 +308,10 @@
 
         mouse_symbol {
             bindings = <
-&kp LG(LS(S))  &kp LC(TAB)  &screen_switching  &mkp MB5  &bkt_macro                      &interface_shift LS(N7)            &interface_shift LS(SEMICOLON)  &interface_shift LS(SQT)  &kp EQUAL                      &kp LEFT_BRACKET
-&mo 4          &mkp MB2     &mkp MB3           &mkp MB1  &par_macro  &trans      &trans  &interface_shift LS(NUMBER_2)      &kp SEMICOLON                   &kp SQT                   &interface_shift LS(NUMBER_1)  &layer_interface_shift 4 LS(EQUAL)
-&trans         &trans       &trans             &mkp MB4  &brc_macro  &trans      &trans  &interface_shift LS(LEFT_BRACKET)  &interface_shift LS(NUMBER_3)   &interface_shift LS(N5)   &interface_shift LS(NUMBER_4)  &interface_shift LS(NUMBER_6)
-&trans         &trans       &trans             &trans    &trans      &trans      &trans  &trans                                                                                                                      &kp LS(INTERNATIONAL_3)
+&kp LG(LS(S))  &kp LC(TAB)  &macro_altab  &mkp MB5  &none                       &interface_shift N7            &interface_shift SEMICOLON  &interface_shift SQT  &kp EQUAL                  &kp LEFT_BRACKET
+&mo 5          &mkp MB2     &mkp MB3      &mkp MB1  &none   &trans      &trans  &interface_shift NUMBER_2      &kp SEMICOLON               &kp SQT               &interface_shift NUMBER_1  &interface_shift_toggle_scroll 0 EQUAL
+&trans         &trans       &trans        &mkp MB4  &none   &trans      &trans  &interface_shift LEFT_BRACKET  &interface_shift NUMBER_3   &interface_shift N5   &interface_shift NUMBER_4  &interface_shift NUMBER_6
+&trans         &trans       &trans        &trans    &trans  &trans      &trans  &trans                                                                                                      &kp INTERNATIONAL_3
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_DOWN PAGE_UP>;
@@ -308,10 +319,10 @@
 
         number_arrow {
             bindings = <
-&kp MINUS     &kp N7        &kp N8        &kp N9        &interface_shift LS(SEMICOLON)                                          &none   &none     &none         &none          &none
-&kp SLASH     &kp NUMBER_4  &kp N5        &kp NUMBER_6  &interface_shift LS(SINGLE_QUOTE)  &kp LC(LA(KP_NUMBER_0))      &none   &none   &kp LEFT  &kp UP_ARROW  &kp DOWN       &kp RIGHT
-&kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD                         &kp COMMA                    &none   &none   &kp HOME  &kp PAGE_UP   &kp PAGE_DOWN  &kp END
-&trans        &trans        &trans        &trans        &trans                             &trans                       &trans  &trans                                         &none
+&kp MINUS     &kp N7        &kp N8        &kp N9        &interface_shift LS(SEMICOLON)                                          &none   &interface_ctrl LEFT_ARROW  &interface_ctrl UP_ARROW  &interface_ctrl DOWN_ARROW  &interface_ctrl RIGHT_ARROW
+&kp SLASH     &kp NUMBER_4  &kp N5        &kp NUMBER_6  &interface_shift LS(SINGLE_QUOTE)  &kp LC(LA(KP_NUMBER_0))      &none   &none   &kp LEFT                    &kp UP_ARROW              &kp DOWN                    &kp RIGHT
+&kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD                         &kp COMMA                    &none   &none   &kp HOME                    &kp PAGE_UP               &kp PAGE_DOWN               &kp END
+&trans        &trans        &trans        &trans        &trans                             &trans                       &trans  &trans                                                                                    &none
             >;
 
             sensor-bindings = <&inc_dec_kp LC(TAB) LC(LS(TAB))>;
@@ -319,7 +330,7 @@
 
         function_blt {
             bindings = <
-&kp F9  &kp F10  &kp F11  &kp F12  &none                       &out OUT_USB  &out OUT_BLE  &none         &none         &none
+&kp F9  &kp F10  &kp F11  &kp F12  &none                       &none         &out OUT_USB  &out OUT_BLE  &none         &none
 &kp F5  &kp F6   &kp F7   &kp F8   &none   &trans      &none   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &kp F1  &kp F2   &kp F3   &kp F4   &none   &none       &none   &none         &none         &none         &none         &bt BT_CLR
 &trans  &trans   &trans   &trans   &trans  &trans      &trans  &trans                                                  &bt BT_CLR_ALL
@@ -329,7 +340,16 @@
         scl {
             bindings = <
 &none  &none     &none     &mkp MB5  &none                        &none   &mkp MB5  &none     &none     &none
-&none  &mkp MB2  &mkp MB3  &mkp MB1  &none   &none       &none    &none   &mkp MB1  &mkp MB3  &mkp MB2  &none
+&none  &mkp MB2  &mkp MB3  &mkp MB1  &tog 6  &none       &none    &tog 6  &mkp MB1  &mkp MB3  &mkp MB2  &none
+&none  &none     &none     &mkp MB4  &none   &none       &none    &none   &mkp MB4  &none     &none     &none
+&none  &none     &none     &trans    &trans  &trans      &kp DEL  &trans                                &none
+            >;
+        };
+
+        layer_6 {
+            bindings = <
+&none  &none     &none     &mkp MB5  &none                        &none   &mkp MB5  &none     &none     &none
+&none  &mkp MB2  &mkp MB3  &mkp MB1  &tog 6  &none       &none    &tog 6  &mkp MB1  &mkp MB3  &mkp MB2  &none
 &none  &none     &none     &mkp MB4  &none   &none       &none    &none   &mkp MB4  &none     &none     &none
 &none  &none     &none     &trans    &trans  &trans      &kp DEL  &trans                                &none
             >;
@@ -340,8 +360,8 @@
         compatible = "zmk,conditional-layers";
 
         blt_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
+            if-layers = <2 3>;
+            then-layer = <4>;
         };
     };
 };
