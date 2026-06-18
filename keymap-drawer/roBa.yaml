@@ -22,14 +22,58 @@ layers:
   - J
   - K
   - L
-  - {t: '-', h: scl}
+  - {t: '-', h: '&macro_toggle_scroll'}
   - Z
   - X
   - C
   - V
   - B
-  - '&lbkt_td_behavior'
-  - '&rbkt_td_behavior'
+  - ''
+  - ''
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - ESCAPE
+  - LEFT WIN
+  - LEFT ALT
+  - {t: SPACE, h: mouse_symbol}
+  - {t: TAB, h: LEFT SHIFT}
+  - {t: '`', h: LCTRL}
+  - {t: BACKSPACE, h: LEFT SHIFT}
+  - {t: ENTER, h: number_arrow}
+  - INTERNATIONAL 1
+  '7':
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - A
+  - S
+  - D
+  - F
+  - G
+  - MUTE
+  - Gui+Alt+K
+  - H
+  - J
+  - K
+  - L
+  - {t: '-', h: '&macro_toggle_scroll'}
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - ''
+  - ''
   - N
   - M
   - ','
@@ -47,38 +91,38 @@ layers:
   mouse_symbol:
   - Gui+Sft+S
   - Ctl+TAB
-  - '&screen_switching'
+  - '&macro_altab'
   - '&mkp MB5'
-  - '&bkt_macro'
-  - '&interface_shift LS(N7)'
-  - '&interface_shift LS(SEMICOLON)'
-  - '&interface_shift LS(SQT)'
+  - ''
+  - '&interface_shift N7'
+  - '&interface_shift SEMICOLON'
+  - '&interface_shift SQT'
   - '='
   - '['
   - scl
   - '&mkp MB2'
   - '&mkp MB3'
   - '&mkp MB1'
-  - '&par_macro'
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&interface_shift LS(NUMBER_2)'
+  - '&interface_shift NUMBER_2'
   - ;
   - ''''
-  - '&interface_shift LS(NUMBER_1)'
-  - '&layer_interface_shift 4 LS(EQUAL)'
+  - '&interface_shift NUMBER_1'
+  - {t: '&interface_shift EQUAL', h: '&macro_toggle_scroll'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&mkp MB4'
-  - '&brc_macro'
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&interface_shift LS(LEFT_BRACKET)'
-  - '&interface_shift LS(NUMBER_3)'
-  - '&interface_shift LS(N5)'
-  - '&interface_shift LS(NUMBER_4)'
-  - '&interface_shift LS(NUMBER_6)'
+  - '&interface_shift LEFT_BRACKET'
+  - '&interface_shift NUMBER_3'
+  - '&interface_shift N5'
+  - '&interface_shift NUMBER_4'
+  - '&interface_shift NUMBER_6'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -87,7 +131,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Sft+INTERNATIONAL 3
+  - INTERNATIONAL 3
   number_arrow:
   - '-'
   - '7'
@@ -95,10 +139,10 @@ layers:
   - '9'
   - '&interface_shift LS(SEMICOLON)'
   - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - '&interface_ctrl LEFT_ARROW'
+  - '&interface_ctrl UP_ARROW'
+  - '&interface_ctrl DOWN_ARROW'
+  - '&interface_ctrl RIGHT_ARROW'
   - /
   - '4'
   - '5'
@@ -138,9 +182,9 @@ layers:
   - F11
   - F12
   - ''
+  - ''
   - OUT USB
   - OUT BLE
-  - ''
   - ''
   - ''
   - F5
@@ -187,18 +231,62 @@ layers:
   - ''
   - ''
   - ''
-  - ''
-  - '&mkp MB2'
-  - '&mkp MB3'
-  - '&mkp MB1'
-  - ''
-  - ''
-  - ''
-  - ''
-  - '&mkp MB1'
-  - '&mkp MB3'
-  - '&mkp MB2'
   - {type: held}
+  - '&mkp MB2'
+  - '&mkp MB3'
+  - '&mkp MB1'
+  - {t: '6', h: toggle}
+  - ''
+  - ''
+  - {t: '6', h: toggle}
+  - '&mkp MB1'
+  - '&mkp MB3'
+  - '&mkp MB2'
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&mkp MB4'
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&mkp MB4'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - DEL
+  - {t: ▽, type: trans}
+  - ''
+  '6':
+  - ''
+  - ''
+  - ''
+  - '&mkp MB5'
+  - ''
+  - ''
+  - '&mkp MB5'
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&mkp MB2'
+  - '&mkp MB3'
+  - '&mkp MB1'
+  - {t: '6', h: toggle}
+  - ''
+  - ''
+  - {t: '6', h: toggle}
+  - '&mkp MB1'
+  - '&mkp MB3'
+  - '&mkp MB2'
+  - ''
   - ''
   - ''
   - ''
