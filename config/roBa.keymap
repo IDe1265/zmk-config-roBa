@@ -56,21 +56,72 @@
     tapping-term-ms = <170>;
 };
 
-&sl { release-after-ms = <250>; }; // ダブルクリックに必要な時間を設定
+&lt {
+    flavor = "balanced";
+    quick-tap-ms = <165>;
+    tapping-term-ms = <170>;
+};
+
 / {
     combos {
         compatible = "zmk,combos";
 
-        lang1 {
-            bindings = <&kp INT5>;
+        combo_lang1 {
+            bindings = <&kp INTERNATIONAL_5>;
             key-positions = <13 12>;
-            layers = <0>;
         };
 
-        lang2 {
-            bindings = <&kp INT4>;
-            key-positions = <18 19>;
-            layers = <0>;
+        combo_lang2 {
+            bindings = <&kp INTERNATIONAL_4>;
+            key-positions = <16 17>;
+        };
+
+        combo_square_bracket_left {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <2 3>;
+            layers = <0 1>;
+        };
+
+        combo_square_bracket_right {
+            bindings = <&kp NUHS>;
+            key-positions = <7 6>;
+            layers = <0 1>;
+        };
+
+        combo_parenthess_left {
+            bindings = <&interface_shift N8>;
+            key-positions = <23 22>;
+            layers = <0 1>;
+        };
+
+        combo_parenthess_right {
+            bindings = <&interface_shift N9>;
+            key-positions = <26 27>;
+            layers = <0 1>;
+        };
+
+        combo_curly_bracket_left {
+            bindings = <&interface_shift RIGHT_BRACKET>;
+            key-positions = <3 2>;
+            layers = <2>;
+        };
+
+        combo_curly_bracket_right {
+            bindings = <&interface_shift NUHS>;
+            key-positions = <7 6>;
+            layers = <2>;
+        };
+
+        combo_angle_braket_left {
+            bindings = <&interface_shift COMMA>;
+            key-positions = <23 22>;
+            layers = <2>;
+        };
+
+        combo_angle_braket_right {
+            bindings = <&interface_shift PERIOD>;
+            key-positions = <27 26>;
+            layers = <2>;
         };
     };
 
@@ -78,47 +129,8 @@
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&to 1 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
-        };
-
-        bkt_macro: bkt_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RBKT &kp NUHS &kp LEFT_ARROW>;
-            label = "BKT_MACRO";
-        };
-
-        par_macro: par_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_SHIFT>,
-                <&macro_tap>,
-                <&kp N8 &kp N9>,
-                <&macro_release>,
-                <&kp LEFT_SHIFT>,
-                <&macro_tap>,
-                <&kp LEFT_ARROW>;
-
-            label = "PAR_MACRO";
-        };
-
-        brc_macro: brc_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_SHIFT>,
-                <&macro_tap>,
-                <&kp RIGHT_BRACKET &kp NUHS>,
-                <&macro_release>,
-                <&kp LEFT_SHIFT>,
-                <&macro_tap>,
-                <&kp LEFT_ARROW>;
-
-            label = "BRC_MACRO";
         };
 
         interface_shift: interface_shift {
@@ -132,10 +144,24 @@
                 <&macro_release>,
                 <&kp LEFT_SHIFT>;
 
-            label = "INTERFACE_SHIFT";
+            label = "INTERFACES_SHIFT";
         };
 
-        screen_switching: screen_switching {
+        interface_ctrl: interface_ctrl {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_release>,
+                <&kp LCTRL>;
+
+            label = "INTERFACE_CTRL";
+        };
+
+        macro_altab: macro_altab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -146,7 +172,74 @@
                 <&macro_release>,
                 <&kp LEFT_ALT &kp LCTRL>;
 
-            label = "SCREEN_SWITCHING";
+            label = "MACRO_ALTAB";
+        };
+
+        macro_toggle_scroll: macro_toggle_scroll {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&mo 5 &mo 6>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&mo 5 &mo 6>;
+        };
+
+        macro_ctrl_alt_home: macro_ctrl_alt_home {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL &kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp HOME>,
+                <&macro_release>,
+                <&kp LCTRL &kp LEFT_ALT>;
+
+            label = "MACRO_CTRL_ALT_HOME";
+        };
+
+        macro_win_alt_k: macro_win_alt_k {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_WIN &kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp K>,
+                <&macro_release>,
+                <&kp LEFT_WIN &kp LEFT_ALT>;
+
+            label = "MACRO_WIN_ALT_K";
+        };
+
+        interface_ctrl_win: interface_ctrl_win {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL &kp LEFT_WIN>,
+                <&macro_tap>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_release>,
+                <&kp LCTRL &kp LEFT_WIN>;
+
+            label = "INTERFACE_CTRL_WIN";
+        };
+
+        interface_win: interface_win {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_WIN>,
+                <&macro_tap>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_release>,
+                <&kp LEFT_WIN>;
+
+            label = "INTERFACE_WIN";
         };
     };
 
@@ -160,28 +253,31 @@
             tapping-term-ms = <200>;
         };
 
-        lbkt_td_behavior: lbkt_td_behavior {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LBKT_TD_BEHAVIOR";
-            #binding-cells = <0>;
-            bindings = <&kp RBKT>, <&kp LS(N8)>;
-        };
-
-        rbkt_td_behavior: rbkt_td_behavior {
-            compatible = "zmk,behavior-tap-dance";
-            label = "RBKT_TD_BEHAVIOR";
-            #binding-cells = <0>;
-            bindings = <&kp NUHS>, <&kp LS(N9)>;
-        };
-
-        layer_interface_shift: layer_interface_shift {
+        interface_layer_shift: interface_layer_shift {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_INTERFACE_SHIFT";
+            label = "INTERFACE_LAYER_SHIFT";
             bindings = <&mo>, <&interface_shift>;
 
             #binding-cells = <2>;
             tapping-term-ms = <170>;
             flavor = "balanced";
+        };
+
+        interface_toggle_scroll: interface_toggle_scroll {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <170>;
+            bindings = <&macro_toggle_scroll>, <&kp>;
+        };
+
+        interface_shift_toggle_scroll: interface_shift_toggle_scroll {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TAP_SIMULTANEOUS_SHIFT";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <170>;
+            bindings = <&macro_toggle_scroll>, <&interface_shift>;
         };
     };
 
