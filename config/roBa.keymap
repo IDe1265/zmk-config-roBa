@@ -56,21 +56,74 @@
     tapping-term-ms = <170>;
 };
 
-&sl { release-after-ms = <250>; }; // ダブルクリックに必要な時間を設定
+&lt {
+    flavor = "balanced";
+    quick-tap-ms = <165>;
+    tapping-term-ms = <170>;
+};
+
 / {
     combos {
         compatible = "zmk,combos";
 
-        lang1 {
-            bindings = <&kp INT5>;
+        combo_lang1 {
+            bindings = <&kp INTERNATIONAL_5>;
             key-positions = <13 12>;
-            layers = <0>;
+            layers = <0 1>;
         };
 
-        lang2 {
-            bindings = <&kp INT4>;
+        combo_lang2 {
+            bindings = <&kp INTERNATIONAL_4>;
             key-positions = <18 19>;
-            layers = <0>;
+            layers = <0 1>;
+        };
+
+        combo_square_bracket_left {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <2 3>;
+            layers = <0 1>;
+        };
+
+        combo_square_bracket_right {
+            bindings = <&kp NUHS>;
+            key-positions = <7 6>;
+            layers = <0 1>;
+        };
+
+        combo_parenthess_left {
+            bindings = <&interface_shift N8>;
+            key-positions = <24 25>;
+            layers = <0 1>;
+        };
+
+        combo_parenthess_right {
+            bindings = <&interface_shift N9>;
+            key-positions = <30 31>;
+            layers = <0 1>;
+        };
+
+        combo_curly_bracket_left {
+            bindings = <&interface_shift RIGHT_BRACKET>;
+            key-positions = <3 2>;
+            layers = <2>;
+        };
+
+        combo_curly_bracket_right {
+            bindings = <&interface_shift NUHS>;
+            key-positions = <7 6>;
+            layers = <2>;
+        };
+
+        combo_angle_braket_left {
+            bindings = <&interface_shift COMMA>;
+            key-positions = <25 24>;
+            layers = <2>;
+        };
+
+        combo_angle_braket_right {
+            bindings = <&interface_shift PERIOD>;
+            key-positions = <30 31>;
+            layers = <2>;
         };
     };
 
@@ -78,47 +131,8 @@
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&to 1 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
-        };
-
-        bkt_macro: bkt_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RBKT &kp NUHS &kp LEFT_ARROW>;
-            label = "BKT_MACRO";
-        };
-
-        par_macro: par_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_SHIFT>,
-                <&macro_tap>,
-                <&kp N8 &kp N9>,
-                <&macro_release>,
-                <&kp LEFT_SHIFT>,
-                <&macro_tap>,
-                <&kp LEFT_ARROW>;
-
-            label = "PAR_MACRO";
-        };
-
-        brc_macro: brc_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_SHIFT>,
-                <&macro_tap>,
-                <&kp RIGHT_BRACKET &kp NUHS>,
-                <&macro_release>,
-                <&kp LEFT_SHIFT>,
-                <&macro_tap>,
-                <&kp LEFT_ARROW>;
-
-            label = "BRC_MACRO";
         };
 
         interface_shift: interface_shift {
@@ -132,10 +146,24 @@
                 <&macro_release>,
                 <&kp LEFT_SHIFT>;
 
-            label = "INTERFACE_SHIFT";
+            label = "INTERFACES_SHIFT";
         };
 
-        screen_switching: screen_switching {
+        interface_ctrl: interface_ctrl {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_release>,
+                <&kp LCTRL>;
+
+            label = "INTERFACE_CTRL";
+        };
+
+        macro_altab: macro_altab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -146,7 +174,74 @@
                 <&macro_release>,
                 <&kp LEFT_ALT &kp LCTRL>;
 
-            label = "SCREEN_SWITCHING";
+            label = "MACRO_ALTAB";
+        };
+
+        macro_toggle_scroll: macro_toggle_scroll {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&mo 5 &mo 6>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&mo 5 &mo 6>;
+        };
+
+        macro_ctrl_alt_home: macro_ctrl_alt_home {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL &kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp HOME>,
+                <&macro_release>,
+                <&kp LCTRL &kp LEFT_ALT>;
+
+            label = "MACRO_CTRL_ALT_HOME";
+        };
+
+        macro_win_alt_k: macro_win_alt_k {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_WIN &kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp K>,
+                <&macro_release>,
+                <&kp LEFT_WIN &kp LEFT_ALT>;
+
+            label = "MACRO_WIN_ALT_K";
+        };
+
+        interface_ctrl_win: interface_ctrl_win {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL &kp LEFT_WIN>,
+                <&macro_tap>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_release>,
+                <&kp LCTRL &kp LEFT_WIN>;
+
+            label = "INTERFACE_CTRL_WIN";
+        };
+
+        interface_win: interface_win {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_WIN>,
+                <&macro_tap>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_release>,
+                <&kp LEFT_WIN>;
+
+            label = "INTERFACE_WIN";
         };
     };
 
@@ -160,28 +255,31 @@
             tapping-term-ms = <200>;
         };
 
-        lbkt_td_behavior: lbkt_td_behavior {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LBKT_TD_BEHAVIOR";
-            #binding-cells = <0>;
-            bindings = <&kp RBKT>, <&kp LS(N8)>;
-        };
-
-        rbkt_td_behavior: rbkt_td_behavior {
-            compatible = "zmk,behavior-tap-dance";
-            label = "RBKT_TD_BEHAVIOR";
-            #binding-cells = <0>;
-            bindings = <&kp NUHS>, <&kp LS(N9)>;
-        };
-
-        layer_interface_shift: layer_interface_shift {
+        interface_layer_shift: interface_layer_shift {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_INTERFACE_SHIFT";
+            label = "INTERFACE_LAYER_SHIFT";
             bindings = <&mo>, <&interface_shift>;
 
             #binding-cells = <2>;
             tapping-term-ms = <170>;
             flavor = "balanced";
+        };
+
+        interface_toggle_scroll: interface_toggle_scroll {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <170>;
+            bindings = <&macro_toggle_scroll>, <&kp>;
+        };
+
+        interface_shift_toggle_scroll: interface_shift_toggle_scroll {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TAP_SIMULTANEOUS_SHIFT";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <170>;
+            bindings = <&macro_toggle_scroll>, <&interface_shift>;
         };
     };
 
@@ -190,10 +288,21 @@
 
         df {
             bindings = <
-&kp Q       &kp W         &kp E         &kp R        &kp T                                                                &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A       &kp S         &kp D         &kp F        &kp G               &kp C_MUTE             &kp LG(LA(K))             &kp H        &kp J  &kp K      &kp L    &lt 4 MINUS
-&kp Z       &kp X         &kp C         &kp V        &kp B               &lbkt_td_behavior      &rbkt_td_behavior         &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp ESCAPE  &kp LEFT_WIN  &kp LEFT_ALT  &lt 1 SPACE  &mt LEFT_SHIFT TAB  &mt LCTRL GRAVE        &mt LEFT_SHIFT BACKSPACE  &lt 2 ENTER                             &kp INTERNATIONAL_1
+&kp Q       &kp W         &kp E         &kp R        &kp T                                                                 &kp Y        &kp U  &kp I      &kp O    &kp P
+&kp A       &kp S         &kp D         &kp F        &kp G               &kp C_MUTE              &none                     &kp H        &kp J  &kp K      &kp L    &interface_toggle_scroll 0 MINUS
+&kp Z       &kp X         &kp C         &kp V        &kp B               &none                   &none                     &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp ESCAPE  &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 SPACE  &mt LEFT_SHIFT TAB  &mt LCTRL CAPSLOCK      &mt LEFT_SHIFT BACKSPACE  &lt 3 ENTER                             &kp INTERNATIONAL_1
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
+        };
+
+        overlay_ohnishi {
+            bindings = <
+&kp Q   &kp L   &kp U   &kp COMMA  &kp DOT                        &kp F   &kp W  &kp R  &kp Y  &kp P
+&kp E   &kp I   &kp A   &kp O      &kp MINUS  &trans      &trans  &kp K   &kp T  &kp N  &kp S  &interface_toggle_scroll 0 H
+&kp Z   &kp X   &kp C   &kp V      &kp FSLH   &trans      &trans  &kp G   &kp D  &kp M  &kp J  &kp B
+&trans  &trans  &trans  &trans     &trans     &trans      &trans  &trans                       &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
@@ -201,10 +310,10 @@
 
         mouse_symbol {
             bindings = <
-&kp LG(LS(S))  &kp LC(TAB)  &screen_switching  &mkp MB5  &bkt_macro                      &interface_shift LS(N7)            &interface_shift LS(SEMICOLON)  &interface_shift LS(SQT)  &kp EQUAL                      &kp LEFT_BRACKET
-&mo 4          &mkp MB2     &mkp MB3           &mkp MB1  &par_macro  &trans      &trans  &interface_shift LS(NUMBER_2)      &kp SEMICOLON                   &kp SQT                   &interface_shift LS(NUMBER_1)  &layer_interface_shift 4 LS(EQUAL)
-&trans         &trans       &trans             &mkp MB4  &brc_macro  &trans      &trans  &interface_shift LS(LEFT_BRACKET)  &interface_shift LS(NUMBER_3)   &interface_shift LS(N5)   &interface_shift LS(NUMBER_4)  &interface_shift LS(NUMBER_6)
-&trans         &trans       &trans             &trans    &trans      &trans      &trans  &trans                                                                                                                      &kp LS(INTERNATIONAL_3)
+&interface_shift LG(S)  &kp LC(TAB)   &macro_altab  &mkp MB5  &kp C_VOLUME_UP                        &interface_shift N7            &interface_shift SEMICOLON  &interface_shift SQT  &kp EQUAL                  &kp LEFT_BRACKET
+&macro_toggle_scroll    &mkp MB2      &mkp MB3      &mkp MB1  &kp C_MUTE         &trans      &trans  &interface_shift NUMBER_2      &kp SEMICOLON               &kp SQT               &interface_shift NUMBER_1  &interface_shift_toggle_scroll 0 EQUAL
+&trans                  &kp LEFT_ALT  &kp TAB       &mkp MB4  &kp C_VOLUME_DOWN  &trans      &trans  &interface_shift LEFT_BRACKET  &interface_shift NUMBER_3   &interface_shift N5   &interface_shift NUMBER_4  &interface_shift NUMBER_6
+&trans                  &trans        &trans        &trans    &trans             &trans      &trans  &trans                                                                                                      &kp INTERNATIONAL_3
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_DOWN PAGE_UP>;
@@ -212,10 +321,10 @@
 
         number_arrow {
             bindings = <
-&kp MINUS     &kp N7        &kp N8        &kp N9        &interface_shift LS(SEMICOLON)                                          &none   &none     &none         &none          &none
-&kp SLASH     &kp NUMBER_4  &kp N5        &kp NUMBER_6  &interface_shift LS(SINGLE_QUOTE)  &kp LC(LA(KP_NUMBER_0))      &none   &none   &kp LEFT  &kp UP_ARROW  &kp DOWN       &kp RIGHT
-&kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD                         &kp COMMA                    &none   &none   &kp HOME  &kp PAGE_UP   &kp PAGE_DOWN  &kp END
-&trans        &trans        &trans        &trans        &trans                             &trans                       &trans  &trans                                         &none
+&interface_win TAB  &kp KP_N7  &kp KP_N8  &kp KP_N9  &interface_ctrl_win RIGHT_ARROW                                       &kp KP_NUM            &interface_ctrl LEFT_ARROW  &interface_ctrl UP_ARROW  &interface_ctrl DOWN_ARROW  &interface_ctrl RIGHT_ARROW
+&interface_win D    &kp KP_N4  &kp KP_N5  &kp KP_N6  &interface_ctrl_win LEFT_ARROW   &kp LC(LA(KP_NUMBER_0))      &none   &macro_win_alt_k      &kp LEFT                    &kp UP_ARROW              &kp DOWN                    &kp RIGHT
+&kp KP_N0           &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp PERIOD                       &kp COMMA                    &none   &macro_ctrl_alt_home  &kp HOME                    &kp PAGE_UP               &kp PAGE_DOWN               &kp END
+&trans              &trans     &trans     &trans     &trans                           &trans                       &trans  &trans                                                                                                  &none
             >;
 
             sensor-bindings = <&inc_dec_kp LC(TAB) LC(LS(TAB))>;
@@ -223,19 +332,28 @@
 
         function_blt {
             bindings = <
-&kp F9  &kp F10  &kp F11  &kp F12  &none                       &out OUT_USB  &out OUT_BLE  &none         &none         &none
+&kp F9  &kp F10  &kp F11  &kp F12  &none                       &none         &out OUT_USB  &out OUT_BLE  &none         &bootloader
 &kp F5  &kp F6   &kp F7   &kp F8   &none   &trans      &none   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&kp F1  &kp F2   &kp F3   &kp F4   &none   &none       &none   &none         &none         &none         &none         &bt BT_CLR
+&kp F1  &kp F2   &kp F3   &kp F4   &none   &none       &none   &none         &none         &tog 1        &none         &bt BT_CLR
 &trans  &trans   &trans   &trans   &trans  &trans      &trans  &trans                                                  &bt BT_CLR_ALL
             >;
         };
 
-        scl {
+        mouse {
             bindings = <
-&none  &none     &none     &mkp MB5  &none                        &none   &mkp MB5  &none     &none     &none
-&none  &mkp MB2  &mkp MB3  &mkp MB1  &none   &none       &none    &none   &mkp MB1  &mkp MB3  &mkp MB2  &none
-&none  &none     &none     &mkp MB4  &none   &none       &none    &none   &mkp MB4  &none     &none     &none
-&none  &none     &none     &trans    &trans  &trans      &kp DEL  &trans                                &none
+&none  &none     &macro_altab  &mkp MB5  &none                        &none   &mkp MB5  &macro_altab  &none     &none
+&none  &mkp MB2  &mkp MB3      &mkp MB1  &tog 6  &none       &none    &tog 6  &mkp MB1  &mkp MB3      &mkp MB2  &none
+&none  &none     &none         &mkp MB4  &none   &none       &none    &none   &mkp MB4  &none         &none     &none
+&none  &none     &none         &trans    &trans  &trans      &kp DEL  &trans                                    &none
+            >;
+        };
+
+        scroll {
+            bindings = <
+&none  &none     &macro_altab  &mkp MB5  &none                        &none   &mkp MB5  &macro_altab  &none     &none
+&none  &mkp MB2  &mkp MB3      &mkp MB1  &tog 6  &none       &none    &tog 6  &mkp MB1  &mkp MB3      &mkp MB2  &none
+&none  &none     &none         &mkp MB4  &none   &none       &none    &none   &mkp MB4  &none         &none     &none
+&none  &none     &none         &trans    &trans  &trans      &kp DEL  &trans                                    &none
             >;
         };
     };
@@ -244,8 +362,8 @@
         compatible = "zmk,conditional-layers";
 
         blt_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
+            if-layers = <2 3>;
+            then-layer = <4>;
         };
     };
 };
