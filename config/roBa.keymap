@@ -286,21 +286,21 @@
 
         df {
             bindings = <
-&kp Q       &kp W         &kp E         &kp R        &kp T                                                              &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A       &kp S         &kp D         &kp F        &kp G               &kp C_MUTE           &kp LG(LA(K))             &kp H        &kp J  &kp K      &kp L    &interface_toggle_scroll 0 MINUS
-&kp Z       &kp X         &kp C         &kp V        &kp B               &none                &none                     &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp ESCAPE  &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 SPACE  &mt LEFT_SHIFT TAB  &mt LCTRL GRAVE      &mt LEFT_SHIFT BACKSPACE  &lt 3 ENTER                             &kp INTERNATIONAL_1
+&kp Q       &kp W         &kp E         &kp R        &kp T                                                                 &kp Y        &kp U  &kp I      &kp O    &kp P
+&kp A       &kp S         &kp D         &kp F        &kp G               &kp C_MUTE              &kp LG(LA(K))             &kp H        &kp J  &kp K      &kp L    &interface_toggle_scroll 0 MINUS
+&kp Z       &kp X         &kp C         &kp V        &kp B               &none                   &none                     &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp ESCAPE  &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 SPACE  &mt LEFT_SHIFT TAB  &mt LCTRL CAPSLOCK      &mt LEFT_SHIFT BACKSPACE  &lt 3 ENTER                             &kp INTERNATIONAL_1
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
 
-        layer_7 {
+        overlay_ohnishi {
             bindings = <
-&kp Q       &kp W         &kp E         &kp R        &kp T                                                              &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A       &kp S         &kp D         &kp F        &kp G               &kp C_MUTE           &kp LG(LA(K))             &kp H        &kp J  &kp K      &kp L    &interface_toggle_scroll 0 MINUS
-&kp Z       &kp X         &kp C         &kp V        &kp B               &none                &none                     &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp ESCAPE  &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 SPACE  &mt LEFT_SHIFT TAB  &mt LCTRL GRAVE      &mt LEFT_SHIFT BACKSPACE  &lt 3 ENTER                             &kp INTERNATIONAL_1
+&kp Q   &kp L   &kp U   &kp COMMA  &kp DOT                        &kp F   &kp W  &kp R  &kp Y  &kp P
+&kp E   &kp I   &kp A   &kp O      &kp MINUS  &trans      &trans  &kp K   &kp T  &kp N  &kp S  &interface_toggle_scroll 0 H
+&kp Z   &kp X   &kp C   &kp V      &kp FSLH   &trans      &trans  &kp G   &kp D  &kp M  &kp J  &kp B
+&trans  &trans  &trans  &trans     &trans     &trans      &trans  &trans                       &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
@@ -308,10 +308,10 @@
 
         mouse_symbol {
             bindings = <
-&kp LG(LS(S))  &kp LC(TAB)  &macro_altab  &mkp MB5  &none                       &interface_shift N7            &interface_shift SEMICOLON  &interface_shift SQT  &kp EQUAL                  &kp LEFT_BRACKET
-&mo 5          &mkp MB2     &mkp MB3      &mkp MB1  &none   &trans      &trans  &interface_shift NUMBER_2      &kp SEMICOLON               &kp SQT               &interface_shift NUMBER_1  &interface_shift_toggle_scroll 0 EQUAL
-&trans         &trans       &trans        &mkp MB4  &none   &trans      &trans  &interface_shift LEFT_BRACKET  &interface_shift NUMBER_3   &interface_shift N5   &interface_shift NUMBER_4  &interface_shift NUMBER_6
-&trans         &trans       &trans        &trans    &trans  &trans      &trans  &trans                                                                                                      &kp INTERNATIONAL_3
+&interface_shift LG(S)  &kp LC(TAB)   &macro_altab  &mkp MB5  &kp C_VOLUME_UP                        &interface_shift N7            &interface_shift SEMICOLON  &interface_shift SQT  &kp EQUAL                  &kp LEFT_BRACKET
+&macro_toggle_scroll    &mkp MB2      &mkp MB3      &mkp MB1  &kp C_MUTE         &trans      &trans  &interface_shift NUMBER_2      &kp SEMICOLON               &kp SQT               &interface_shift NUMBER_1  &interface_shift_toggle_scroll 0 EQUAL
+&trans                  &kp LEFT_ALT  &kp TAB       &mkp MB4  &kp C_VOLUME_DOWN  &trans      &trans  &interface_shift LEFT_BRACKET  &interface_shift NUMBER_3   &interface_shift N5   &interface_shift NUMBER_4  &interface_shift NUMBER_6
+&trans                  &trans        &trans        &trans    &trans             &trans      &trans  &trans                                                                                                      &kp INTERNATIONAL_3
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_DOWN PAGE_UP>;
@@ -319,10 +319,10 @@
 
         number_arrow {
             bindings = <
-&kp MINUS     &kp N7        &kp N8        &kp N9        &interface_shift LS(SEMICOLON)                                          &none   &interface_ctrl LEFT_ARROW  &interface_ctrl UP_ARROW  &interface_ctrl DOWN_ARROW  &interface_ctrl RIGHT_ARROW
-&kp SLASH     &kp NUMBER_4  &kp N5        &kp NUMBER_6  &interface_shift LS(SINGLE_QUOTE)  &kp LC(LA(KP_NUMBER_0))      &none   &none   &kp LEFT                    &kp UP_ARROW              &kp DOWN                    &kp RIGHT
-&kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD                         &kp COMMA                    &none   &none   &kp HOME                    &kp PAGE_UP               &kp PAGE_DOWN               &kp END
-&trans        &trans        &trans        &trans        &trans                             &trans                       &trans  &trans                                                                                    &none
+&interface_win TAB  &kp KP_N7  &kp KP_N8  &kp KP_N9  &interface_ctrl_win RIGHT_ARROW                                       &kp KP_NUM            &interface_ctrl LEFT_ARROW  &interface_ctrl UP_ARROW  &interface_ctrl DOWN_ARROW  &interface_ctrl RIGHT_ARROW
+&interface_win D    &kp KP_N4  &kp KP_N5  &kp KP_N6  &interface_ctrl_win LEFT_ARROW   &kp LC(LA(KP_NUMBER_0))      &none   &macro_win_alt_k      &kp LEFT                    &kp UP_ARROW              &kp DOWN                    &kp RIGHT
+&kp KP_N0           &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp PERIOD                       &kp COMMA                    &none   &macro_ctrl_alt_home  &kp HOME                    &kp PAGE_UP               &kp PAGE_DOWN               &kp END
+&trans              &trans     &trans     &trans     &trans                           &trans                       &trans  &trans                                                                                                  &none
             >;
 
             sensor-bindings = <&inc_dec_kp LC(TAB) LC(LS(TAB))>;
@@ -337,16 +337,16 @@
             >;
         };
 
-        scl {
+        mouse {
             bindings = <
-&none  &none     &none     &mkp MB5  &none                        &none   &mkp MB5  &none     &none     &none
-&none  &mkp MB2  &mkp MB3  &mkp MB1  &tog 6  &none       &none    &tog 6  &mkp MB1  &mkp MB3  &mkp MB2  &none
-&none  &none     &none     &mkp MB4  &none   &none       &none    &none   &mkp MB4  &none     &none     &none
-&none  &none     &none     &trans    &trans  &trans      &kp DEL  &trans                                &none
+&none  &none     &macro_altab  &mkp MB5  &none                        &none   &mkp MB5  &macro_altab  &none     &none
+&none  &mkp MB2  &mkp MB3      &mkp MB1  &tog 6  &none       &none    &tog 6  &mkp MB1  &mkp MB3      &mkp MB2  &none
+&none  &none     &none         &mkp MB4  &none   &none       &none    &none   &mkp MB4  &none         &none     &none
+&none  &none     &none         &trans    &trans  &trans      &kp DEL  &trans                                    &none
             >;
         };
 
-        layer_6 {
+        scroll {
             bindings = <
 &none  &none     &none     &mkp MB5  &none                        &none   &mkp MB5  &none     &none     &none
 &none  &mkp MB2  &mkp MB3  &mkp MB1  &tog 6  &none       &none    &tog 6  &mkp MB1  &mkp MB3  &mkp MB2  &none
