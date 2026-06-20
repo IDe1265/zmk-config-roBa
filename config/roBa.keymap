@@ -69,61 +69,61 @@
         combo_lang1 {
             bindings = <&kp INTERNATIONAL_5>;
             key-positions = <13 12>;
-            layers = <0>;
+            layers = <0 1>;
         };
 
         combo_lang2 {
             bindings = <&kp INTERNATIONAL_4>;
             key-positions = <18 19>;
-            layers = <0>;
+            layers = <0 1>;
         };
 
         combo_square_bracket_left {
             bindings = <&kp RIGHT_BRACKET>;
             key-positions = <2 3>;
-            layers = <0 2>;
+            layers = <0 1>;
         };
 
         combo_square_bracket_right {
             bindings = <&kp NUHS>;
             key-positions = <7 6>;
-            layers = <0 2>;
+            layers = <0 1>;
         };
 
         combo_parenthess_left {
             bindings = <&interface_shift N8>;
             key-positions = <24 25>;
-            layers = <0 2>;
+            layers = <0 1>;
         };
 
         combo_parenthess_right {
             bindings = <&interface_shift N9>;
             key-positions = <30 31>;
-            layers = <0 2>;
+            layers = <0 1>;
         };
 
         combo_curly_bracket_left {
             bindings = <&interface_shift RIGHT_BRACKET>;
             key-positions = <3 2>;
-            layers = <3>;
+            layers = <2>;
         };
 
         combo_curly_bracket_right {
             bindings = <&interface_shift NUHS>;
             key-positions = <7 6>;
-            layers = <3>;
+            layers = <2>;
         };
 
         combo_angle_braket_left {
             bindings = <&interface_shift COMMA>;
             key-positions = <25 24>;
-            layers = <3>;
+            layers = <2>;
         };
 
         combo_angle_braket_right {
             bindings = <&interface_shift PERIOD>;
             key-positions = <30 31>;
-            layers = <3>;
+            layers = <2>;
         };
     };
 
