@@ -69,11 +69,13 @@
         combo_lang1 {
             bindings = <&kp INTERNATIONAL_5>;
             key-positions = <13 12>;
+            layers = <0>;
         };
 
         combo_lang2 {
             bindings = <&kp INTERNATIONAL_4>;
-            key-positions = <16 17>;
+            key-positions = <18 19>;
+            layers = <0>;
         };
 
         combo_square_bracket_left {
@@ -90,13 +92,13 @@
 
         combo_parenthess_left {
             bindings = <&interface_shift N8>;
-            key-positions = <23 22>;
+            key-positions = <24 25>;
             layers = <0 2>;
         };
 
         combo_parenthess_right {
             bindings = <&interface_shift N9>;
-            key-positions = <26 27>;
+            key-positions = <30 31>;
             layers = <0 2>;
         };
 
@@ -114,13 +116,13 @@
 
         combo_angle_braket_left {
             bindings = <&interface_shift COMMA>;
-            key-positions = <23 22>;
+            key-positions = <25 24>;
             layers = <3>;
         };
 
         combo_angle_braket_right {
             bindings = <&interface_shift PERIOD>;
-            key-positions = <27 26>;
+            key-positions = <30 31>;
             layers = <3>;
         };
     };
@@ -287,7 +289,7 @@
         df {
             bindings = <
 &kp Q       &kp W         &kp E         &kp R        &kp T                                                                 &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A       &kp S         &kp D         &kp F        &kp G               &kp C_MUTE              &kp LG(LA(K))             &kp H        &kp J  &kp K      &kp L    &interface_toggle_scroll 0 MINUS
+&kp A       &kp S         &kp D         &kp F        &kp G               &kp C_MUTE              &none                     &kp H        &kp J  &kp K      &kp L    &interface_toggle_scroll 0 MINUS
 &kp Z       &kp X         &kp C         &kp V        &kp B               &none                   &none                     &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
 &kp ESCAPE  &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 SPACE  &mt LEFT_SHIFT TAB  &mt LCTRL CAPSLOCK      &mt LEFT_SHIFT BACKSPACE  &lt 3 ENTER                             &kp INTERNATIONAL_1
             >;
@@ -330,9 +332,9 @@
 
         function_blt {
             bindings = <
-&kp F9  &kp F10  &kp F11  &kp F12  &none                       &none         &out OUT_USB  &out OUT_BLE  &none         &none
+&kp F9  &kp F10  &kp F11  &kp F12  &none                       &none         &out OUT_USB  &out OUT_BLE  &none         &bootloader
 &kp F5  &kp F6   &kp F7   &kp F8   &none   &trans      &none   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&kp F1  &kp F2   &kp F3   &kp F4   &none   &none       &none   &none         &none         &none         &none         &bt BT_CLR
+&kp F1  &kp F2   &kp F3   &kp F4   &none   &none       &none   &none         &none         &tog 1        &none         &bt BT_CLR
 &trans  &trans   &trans   &trans   &trans  &trans      &trans  &trans                                                  &bt BT_CLR_ALL
             >;
         };
@@ -348,10 +350,10 @@
 
         scroll {
             bindings = <
-&none  &none     &none     &mkp MB5  &none                        &none   &mkp MB5  &none     &none     &none
-&none  &mkp MB2  &mkp MB3  &mkp MB1  &tog 6  &none       &none    &tog 6  &mkp MB1  &mkp MB3  &mkp MB2  &none
-&none  &none     &none     &mkp MB4  &none   &none       &none    &none   &mkp MB4  &none     &none     &none
-&none  &none     &none     &trans    &trans  &trans      &kp DEL  &trans                                &none
+&none  &none     &macro_altab  &mkp MB5  &none                        &none   &mkp MB5  &macro_altab  &none     &none
+&none  &mkp MB2  &mkp MB3      &mkp MB1  &tog 6  &none       &none    &tog 6  &mkp MB1  &mkp MB3      &mkp MB2  &none
+&none  &none     &none         &mkp MB4  &none   &none       &none    &none   &mkp MB4  &none         &none     &none
+&none  &none     &none         &trans    &trans  &trans      &kp DEL  &trans                                    &none
             >;
         };
     };
