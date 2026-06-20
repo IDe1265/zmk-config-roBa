@@ -17,7 +17,7 @@ layers:
   - F
   - G
   - MUTE
-  - Gui+Alt+K
+  - ''
   - H
   - J
   - K
@@ -186,7 +186,7 @@ layers:
   - OUT USB
   - OUT BLE
   - ''
-  - ''
+  - '&bootloader'
   - F5
   - F6
   - F7
@@ -208,7 +208,7 @@ layers:
   - ''
   - ''
   - ''
-  - ''
+  - {t: overlay_ohnishi, h: toggle}
   - ''
   - BT CLR
   - {t: ▽, type: trans}
@@ -267,12 +267,12 @@ layers:
   scroll:
   - ''
   - ''
-  - ''
+  - '&macro_altab'
   - '&mkp MB5'
   - ''
   - ''
   - '&mkp MB5'
-  - ''
+  - '&macro_altab'
   - ''
   - ''
   - ''
@@ -311,18 +311,20 @@ layers:
 combos:
 - p: [13, 12]
   k: INTERNATIONAL 5
-- p: [16, 17]
+  l: [df]
+- p: [18, 19]
   k: INTERNATIONAL 4
+  l: [df]
 - p: [2, 3]
   k: ']'
   l: [df, mouse_symbol]
 - p: [7, 6]
   k: '#'
   l: [df, mouse_symbol]
-- p: [23, 22]
+- p: [24, 25]
   k: '&interface_shift N8'
   l: [df, mouse_symbol]
-- p: [26, 27]
+- p: [30, 31]
   k: '&interface_shift N9'
   l: [df, mouse_symbol]
 - p: [3, 2]
@@ -331,9 +333,9 @@ combos:
 - p: [7, 6]
   k: '&interface_shift NUHS'
   l: [number_arrow]
-- p: [23, 22]
+- p: [25, 24]
   k: '&interface_shift COMMA'
   l: [number_arrow]
-- p: [27, 26]
+- p: [30, 31]
   k: '&interface_shift PERIOD'
   l: [number_arrow]
