@@ -17,7 +17,7 @@ layers:
   - F
   - G
   - MUTE
-  - Gui+Alt+K
+  - ''
   - H
   - J
   - K
@@ -40,70 +40,70 @@ layers:
   - LEFT ALT
   - {t: SPACE, h: mouse_symbol}
   - {t: TAB, h: LEFT SHIFT}
-  - {t: '`', h: LCTRL}
+  - {t: CAPSLOCK, h: LCTRL}
   - {t: BACKSPACE, h: LEFT SHIFT}
   - {t: ENTER, h: number_arrow}
   - INTERNATIONAL 1
-  '7':
+  overlay_ohnishi:
   - Q
-  - W
-  - E
-  - R
-  - T
-  - Y
-  - U
-  - I
-  - O
-  - P
-  - A
-  - S
-  - D
-  - F
-  - G
-  - MUTE
-  - Gui+Alt+K
-  - H
-  - J
-  - K
   - L
-  - {t: '-', h: '&macro_toggle_scroll'}
+  - U
+  - ','
+  - .
+  - F
+  - W
+  - R
+  - Y
+  - P
+  - E
+  - I
+  - A
+  - O
+  - '-'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - K
+  - T
+  - N
+  - S
+  - {t: H, h: '&macro_toggle_scroll'}
   - Z
   - X
   - C
   - V
-  - B
-  - ''
-  - ''
-  - N
-  - M
-  - ','
-  - .
   - /
-  - ESCAPE
-  - LEFT WIN
-  - LEFT ALT
-  - {t: SPACE, h: mouse_symbol}
-  - {t: TAB, h: LEFT SHIFT}
-  - {t: '`', h: LCTRL}
-  - {t: BACKSPACE, h: LEFT SHIFT}
-  - {t: ENTER, h: number_arrow}
-  - INTERNATIONAL 1
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - G
+  - D
+  - M
+  - J
+  - B
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   mouse_symbol:
-  - Gui+Sft+S
+  - '&interface_shift LG(S)'
   - Ctl+TAB
   - '&macro_altab'
   - '&mkp MB5'
-  - ''
+  - VOLUME UP
   - '&interface_shift N7'
   - '&interface_shift SEMICOLON'
   - '&interface_shift SQT'
   - '='
   - '['
-  - scl
+  - '&macro_toggle_scroll'
   - '&mkp MB2'
   - '&mkp MB3'
   - '&mkp MB1'
-  - ''
+  - MUTE
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&interface_shift NUMBER_2'
@@ -112,10 +112,10 @@ layers:
   - '&interface_shift NUMBER_1'
   - {t: '&interface_shift EQUAL', h: '&macro_toggle_scroll'}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - LEFT ALT
+  - TAB
   - '&mkp MB4'
-  - ''
+  - VOLUME DOWN
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&interface_shift LEFT_BRACKET'
@@ -133,36 +133,36 @@ layers:
   - {t: ▽, type: trans}
   - INTERNATIONAL 3
   number_arrow:
-  - '-'
-  - '7'
-  - '8'
-  - '9'
-  - '&interface_shift LS(SEMICOLON)'
-  - ''
+  - '&interface_win TAB'
+  - KP 7
+  - KP 8
+  - KP 9
+  - '&interface_ctrl_win RIGHT_ARROW'
+  - KP NUM
   - '&interface_ctrl LEFT_ARROW'
   - '&interface_ctrl UP_ARROW'
   - '&interface_ctrl DOWN_ARROW'
   - '&interface_ctrl RIGHT_ARROW'
-  - /
-  - '4'
-  - '5'
-  - '6'
-  - '&interface_shift LS(SINGLE_QUOTE)'
+  - '&interface_win D'
+  - KP 4
+  - KP 5
+  - KP 6
+  - '&interface_ctrl_win LEFT_ARROW'
   - Ctl+Alt+KP 0
   - ''
-  - ''
+  - '&macro_win_alt_k'
   - LEFT
   - UP ARROW
   - DOWN
   - RIGHT
-  - '0'
-  - '1'
-  - '2'
-  - '3'
+  - KP 0
+  - KP 1
+  - KP 2
+  - KP 3
   - .
   - ','
   - ''
-  - ''
+  - '&macro_ctrl_alt_home'
   - HOME
   - PAGE UP
   - PAGE DOWN
@@ -186,7 +186,7 @@ layers:
   - OUT USB
   - OUT BLE
   - ''
-  - ''
+  - '&bootloader'
   - F5
   - F6
   - F7
@@ -208,7 +208,7 @@ layers:
   - ''
   - ''
   - ''
-  - ''
+  - {t: overlay_ohnishi, h: toggle}
   - ''
   - BT CLR
   - {t: ▽, type: trans}
@@ -220,25 +220,25 @@ layers:
   - {t: ▽, type: trans}
   - {type: held}
   - BT CLR ALL
-  scl:
+  mouse:
   - ''
   - ''
-  - ''
+  - '&macro_altab'
   - '&mkp MB5'
   - ''
   - ''
   - '&mkp MB5'
+  - '&macro_altab'
   - ''
   - ''
   - ''
-  - {type: held}
   - '&mkp MB2'
   - '&mkp MB3'
   - '&mkp MB1'
-  - {t: '6', h: toggle}
+  - {t: scroll, h: toggle}
   - ''
   - ''
-  - {t: '6', h: toggle}
+  - {t: scroll, h: toggle}
   - '&mkp MB1'
   - '&mkp MB3'
   - '&mkp MB2'
@@ -258,31 +258,31 @@ layers:
   - ''
   - ''
   - ''
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - DEL
   - {t: ▽, type: trans}
   - ''
-  '6':
+  scroll:
   - ''
   - ''
-  - ''
+  - '&macro_altab'
   - '&mkp MB5'
   - ''
   - ''
   - '&mkp MB5'
-  - ''
+  - '&macro_altab'
   - ''
   - ''
   - ''
   - '&mkp MB2'
   - '&mkp MB3'
   - '&mkp MB1'
-  - {t: '6', h: toggle}
+  - {t: scroll, h: toggle}
   - ''
   - ''
-  - {t: '6', h: toggle}
+  - {t: scroll, h: toggle}
   - '&mkp MB1'
   - '&mkp MB3'
   - '&mkp MB2'
@@ -311,29 +311,31 @@ layers:
 combos:
 - p: [13, 12]
   k: INTERNATIONAL 5
-- p: [16, 17]
+  l: [df, overlay_ohnishi]
+- p: [18, 19]
   k: INTERNATIONAL 4
+  l: [df, overlay_ohnishi]
 - p: [2, 3]
   k: ']'
-  l: [df, mouse_symbol]
+  l: [df, overlay_ohnishi]
 - p: [7, 6]
   k: '#'
-  l: [df, mouse_symbol]
-- p: [23, 22]
+  l: [df, overlay_ohnishi]
+- p: [24, 25]
   k: '&interface_shift N8'
-  l: [df, mouse_symbol]
-- p: [26, 27]
+  l: [df, overlay_ohnishi]
+- p: [30, 31]
   k: '&interface_shift N9'
-  l: [df, mouse_symbol]
+  l: [df, overlay_ohnishi]
 - p: [3, 2]
   k: '&interface_shift RIGHT_BRACKET'
-  l: [number_arrow]
+  l: [mouse_symbol]
 - p: [7, 6]
   k: '&interface_shift NUHS'
-  l: [number_arrow]
-- p: [23, 22]
+  l: [mouse_symbol]
+- p: [25, 24]
   k: '&interface_shift COMMA'
-  l: [number_arrow]
-- p: [27, 26]
+  l: [mouse_symbol]
+- p: [30, 31]
   k: '&interface_shift PERIOD'
-  l: [number_arrow]
+  l: [mouse_symbol]
