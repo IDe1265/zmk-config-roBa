@@ -311,31 +311,31 @@ layers:
 combos:
 - p: [13, 12]
   k: INTERNATIONAL 5
-  l: [df]
+  l: [df, overlay_ohnishi]
 - p: [18, 19]
   k: INTERNATIONAL 4
-  l: [df]
+  l: [df, overlay_ohnishi]
 - p: [2, 3]
   k: ']'
-  l: [df, mouse_symbol]
+  l: [df, overlay_ohnishi]
 - p: [7, 6]
   k: '#'
-  l: [df, mouse_symbol]
+  l: [df, overlay_ohnishi]
 - p: [24, 25]
   k: '&interface_shift N8'
-  l: [df, mouse_symbol]
+  l: [df, overlay_ohnishi]
 - p: [30, 31]
   k: '&interface_shift N9'
-  l: [df, mouse_symbol]
+  l: [df, overlay_ohnishi]
 - p: [3, 2]
   k: '&interface_shift RIGHT_BRACKET'
-  l: [number_arrow]
+  l: [mouse_symbol]
 - p: [7, 6]
   k: '&interface_shift NUHS'
-  l: [number_arrow]
+  l: [mouse_symbol]
 - p: [25, 24]
   k: '&interface_shift COMMA'
-  l: [number_arrow]
+  l: [mouse_symbol]
 - p: [30, 31]
   k: '&interface_shift PERIOD'
-  l: [number_arrow]
+  l: [mouse_symbol]
