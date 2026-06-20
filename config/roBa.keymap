@@ -281,14 +281,6 @@
             tapping-term-ms = <170>;
             bindings = <&macro_toggle_scroll>, <&interface_shift>;
         };
-
-        mod_morph_any: mod_morph_any {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>; // 引数を2つ（修飾時キー、通常時キー）に設定
-            flavor = "tap-preferred";
-            tapping-term-ms = <0>; // 0msにすることでホールド判定を無くす
-            bindings = <&kp>, <&kp>;
-        };
     };
 
     keymap {
