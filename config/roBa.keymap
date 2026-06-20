@@ -243,19 +243,6 @@
 
             label = "INTERFACE_WIN";
         };
-
-        kp_mod: kp_mod {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <2>; // 引数の数を「2」に設定
-            bindings
-                = <&macro_param_1to1> // 1つ目の引数（修飾キー）を次のアクションに渡す
-                , <&macro_press &kp MACRO_PLACEHOLDER>
-                , <&macro_param_2to1> // 2つ目の引数（通常のキー）を次のアクションに渡す
-                , <&macro_tap &kp MACRO_PLACEHOLDER>
-                , <&macro_param_1to1> // 最後に修飾キーを離す
-                , <&macro_release &kp MACRO_PLACEHOLDER>
-                ;
-        };
     };
 
     behaviors {
@@ -293,6 +280,14 @@
             flavor = "balanced";
             tapping-term-ms = <170>;
             bindings = <&macro_toggle_scroll>, <&interface_shift>;
+        };
+
+        mod_morph_any: mod_morph_any {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>; // 引数を2つ（修飾時キー、通常時キー）に設定
+            flavor = "tap-preferred";
+            tapping-term-ms = <0>; // 0msにすることでホールド判定を無くす
+            bindings = <&kp>, <&kp>;
         };
     };
 
